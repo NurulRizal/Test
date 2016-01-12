@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Angular JS</title>
+	<script type="text/javascript" src="angular.JS"></script>
+</head>
+<body>
+<!-- ng-model dan ng-bind-->
+<div ng-app="myApp" ng-controller="myCtrl"  ng-init="first='Rizal'">
+	<p>Name: <input type="text" ng-model="name"></p>
+	<h1>{{name | uppercase}}</h1>
+	<h1><p ng-bind="name"></p></h1>
+	<p>Nama saya <span ng-bind="first"></span></p>
+	<p>Nama Depan: <input type="text" ng-model="depan"> </p>
+	<p>Nama Belakang: <input type="text" ng-model="belakang"> </p>
+	<br>
+	Full Name: {{(depan | uppercase) + " " + (belakang | lowercase)}}
+</div>
+<script type="text/javascript">
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+		$scope.depan="";
+		$scope.belakang="";
+		$scope.name="";
+		$scope.first
+	});
+</script>
+
+</body>
+</html>
